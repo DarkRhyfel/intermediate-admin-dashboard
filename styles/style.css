@@ -170,8 +170,128 @@ p {
 }
 
 .main {
+    padding: 2vh 1vw;
     background-color: var(--admin-alt-color);
     grid-area: main;
     display: grid;
-    grid-template: "projects projects projects announcements" 1fr "projects projects projects trending" / 3fr 1fr;
+    grid-template: "projects announcements" 1fr "projects trending" / 3fr 1fr;
+    gap: 5vh 1vw;
+}
+
+.projects {
+    grid-area: projects;
+    font-size: 1.1rem;
+}
+
+.cards {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1vh 1vw;
+}
+
+.card {
+    padding: 3vh 1vw;
+    height: 20vh;
+    background-color: white;
+    border-radius: 4px;
+    border-left: 0.5vw solid #ef4444;
+    box-shadow: 2px 2px 1px gray;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.card .title {
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+.card .description {
+    font-size: 0.75rem;
+    color: gray;
+}
+
+.card .options {
+    grid-row: 4;
+    justify-self: end;
+}
+
+.card .options button {
+    padding: 0 1vw;
+    background: none;
+    border: none;
+}
+
+.announcements {
+    grid-area: announcements;
+    font-size: 1.1rem;
+}
+
+.announcements .board {
+    padding: 2vh;
+    margin-top: 2vh;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1px gray;
+}
+
+.announcements .announce {
+    padding: 2vh 0.5vw;
+}
+
+.announcements .announce:not(:last-child) {
+    border-bottom: 1px solid gray;
+}
+
+.announcements .announce .title {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.announcements .announce .description {
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.trending {
+    grid-area: trending;
+    font-size: 1.1rem;
+}
+
+.trends {
+    padding: 1vh 2vh;
+    margin-top: 2vh;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1px gray;
+}
+
+.trends ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trends li {
+    display: grid;
+    grid-template: "icon user" 1fr "icon project" 1fr / 2.5rem auto;
+    align-items: center;
+    gap: 0 1vw;
+    font-size: 0.75rem;
+}
+
+.trends .small-icon {
+    grid-area: icon;
+}
+
+.trends .user {
+    grid-area: user;
+    align-self: end;
+    font-weight: bold;
+}
+
+.trends .project {
+    grid-area: project;
+    align-self: start;
+    color: grey;
 }
